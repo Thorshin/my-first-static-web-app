@@ -60,6 +60,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_AMBITIOUS_FLOWER_07EC71B03 }}
           repo_token:                              ${{ secrets.GITHUB_TOKEN }}   # pour laisser l’action créer des commentaires si besoin
           action: "upload"
-          app_location: "/"                      # chemin racine de votre site
-          api_location: ""                       # pas d’Azure Functions
+          app_location: "src"                      # chemin racine de votre site
+          api_location: ""  
+          skip_app_build: true                     # pas d’Azure Functions
           output_location: "dist/angular-basic"  # votre dossier de build
