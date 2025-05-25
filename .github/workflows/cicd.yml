@@ -52,6 +52,10 @@ jobs:
       - name: npm run build
         run: npm run build
 
+      # Debug: List contents of dist directory
+      - name: List dist contents
+        run: ls -la dist/angular-basic
+
       # 8) Déployer sur Azure Static Web Apps
       - name: Build and Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
@@ -63,3 +67,4 @@ jobs:
           api_location: ""                         # pas d'Azure Functions
           skip_app_build: true                     # pas de build par Azure
           output_location: "dist/angular-basic"    # votre dossier de build
+          deployment_environment: "production"     # specify deployment environment
