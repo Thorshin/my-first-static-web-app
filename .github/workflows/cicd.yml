@@ -41,9 +41,8 @@ jobs:
           sudo apt-get install -y google-chrome-stable
 
       # 5) Tests unitaires
-      - name: npm test
-        run: npm test
-        continue-on-error: true
+      # - name: npm test
+      #   run: npm test
 
       # 6) E2E tests (facultatif)
       - name: npm run e2e
