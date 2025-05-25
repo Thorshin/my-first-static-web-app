@@ -41,9 +41,9 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.SWA_DEPLOYMENT_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
-          app_location: "src"
-          output_location: "dist/angular-basic"
-          skip_app_build: true
+          app_location: "/"                    # serve from the root of your build artifact
+          app_artifact_location: "dist/angular-basic"  
+          skip_app_build: true                 # we already ran `npm run build`
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
