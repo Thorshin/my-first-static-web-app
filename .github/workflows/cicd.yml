@@ -41,7 +41,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.SWA_DEPLOYMENT_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
-          app_location: "src"                  # racine du projet Angular
+          app_location: "."                  # racine du projet Angular
           output_location: "dist/angular-basic"
 
   close_pull_request_job:
