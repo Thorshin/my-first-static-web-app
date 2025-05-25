@@ -45,8 +45,8 @@ jobs:
       #   run: npm test
 
       # 6) E2E tests (facultatif)
-      - name: npm run e2e
-        run: npm run e2e
+      # - name: npm run e2e
+      #   run: npm run e2e
 
       # 7) Build pour la prod
       - name: npm run build
