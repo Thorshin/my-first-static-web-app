@@ -35,16 +35,15 @@ jobs:
       - name: Build Angular app
         run: npm run build
     
-      - name: Build And Deploy
+      - name: Build and Deploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.SWA_DEPLOYMENT_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
-          app_location: "src"                  # chemin racine de votre site
-          api_location: ""                     # pas d'Azure Functions
-          output_location: "dist/angular-basic"  # votre dossier de build
-          skip_app_build: true                 # pas de build par Azure
+          app_location: "src"
+          output_location: "dist/angular-basic"
+          skip_app_build: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
