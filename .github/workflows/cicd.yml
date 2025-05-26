@@ -20,23 +20,28 @@ jobs:
           submodules: true
           lfs: false
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v5
         with:
-          node-version: 18
-          cache: 'npm'
+          context: .
+          push: false
+          load: true
+          tags: my-static-site:latest
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build Angular app
-        run: npm run build
+      - name: Extract built files
+        run: |
+          docker create --name temp-container my-static-site:latest
+          docker cp temp-container:/usr/share/nginx/html ./dist/angular-basic
+          docker rm temp-container
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.SWA_DEPLOYMENT_TOKEN }}
-          repo_token:                             ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
           app_location: "/"                      # where angular.json lives
           api_location: ""                       # no Azure Functions
