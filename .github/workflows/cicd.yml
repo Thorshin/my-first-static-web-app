@@ -33,8 +33,9 @@ jobs:
 
       - name: Extract built files
         run: |
+          mkdir -p dist/angular-basic
           docker create --name temp-container my-static-site:latest
-          docker cp temp-container:/usr/share/nginx/html ./dist/angular-basic
+          docker cp temp-container:/usr/share/nginx/html/. ./dist/angular-basic/
           docker rm temp-container
 
       - name: Deploy to Azure Static Web Apps
