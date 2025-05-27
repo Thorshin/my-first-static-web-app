@@ -19,7 +19,7 @@ import { Component } from '@angular/core';
             </div>
           </div>
         </div>
-      </div>
+      </div>  
 
       <div class="counter-section">
         <h3>Compteur interactif</h3>
