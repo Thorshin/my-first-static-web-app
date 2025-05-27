@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
     <div class="container">
       <header class="header">
-        <h1 class="title">Bienvenue sur Mon Application web</h1>
+        <h1 class="title">Bienvenue sur Mon Application</h1>
         <p class="subtitle">Une démonstration des capacités d'Angular</p>
       </header>
 
