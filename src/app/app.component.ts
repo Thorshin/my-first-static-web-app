@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     <div class="container">
       <header class="header">
         <h1 class="title">Emsi</h1>
-        <p class="subtitle">Une démonstration des capacités d'Angular</p>
+        <p class="subtitle">Bouarouje Hanane</p>
       </header>
 
       <div class="card-container">
