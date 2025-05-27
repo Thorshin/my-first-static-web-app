@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
   template: `
     <div class="container">
       <header class="header">
-        <h1 class="title">Emsi</h1>
-        <p class="subtitle">Bouarouje Hanane</p>
+        <h1 class="title">Angluar Web app</h1>
+        <p class="subtitle">Une démonstration des capacités d'Angular</p>
       </header>
 
       <div class="card-container">
